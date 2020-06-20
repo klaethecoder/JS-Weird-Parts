@@ -32,12 +32,12 @@
     empty();
     console.log(change);
 
-    let a =1;
+    let num =1;
 
     // Creation phase is where the Global Variables and Objects and functions are set aside to memory first and in the Execution phase is where the variables get added to the Engines memory
 
     // Using guard statements to do an if/else statement to see how JS uses undefinted
-    if (a === undefined) console.log("a is undefined")
+    if (num === undefined) console.log("a is undefined")
     else console.log('a is defined')
 
     // After the Creation phase and the hoisting, it goes through the execution phase to run my code. 
@@ -66,4 +66,53 @@
         }
 
         third();
-        
+   
+// Variable environment: Where the Variable lives and what it is in that place. 
+
+function b(){
+    var myVar;
+    console.log(myVar)
+
+}
+function a(){
+    var myVar = 2
+console.log(myVar)
+b();
+
+}
+
+var myVar = 1;
+console.log(myVar)
+
+a();
+console.log(myVar);
+
+// Scope Chain: How the Scope of variables work. 
+var v;
+function test(){
+var b = 2
+if (b<5){
+    console.log(v)
+}
+v=10
+
+}
+
+test();
+console.log(v)
+
+let result = (function(){
+    return "This is an IIFE";
+})()
+
+console.log(result)
+
+// Scope: where a variable is available in your code. 
+
+// Asynchronous: More han one at a time. 
+    // Event Queue happen afer the JS Engine Stack is done. 
+
+// Dynampic Typing: You dont tell the engine what type data a variable holds, it will figure it out.
+
+// Types: Undefinted, Null, Number, Boolean, String,Symbol
+
